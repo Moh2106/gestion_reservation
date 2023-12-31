@@ -9,6 +9,7 @@ import ma.enset.ressourceservice.enumeration.ResourceType;
 @Setter
 @Builder
 public class ResourceDTO {
+    private Long id;
     private String nom;
     private ResourceType type;
 }
