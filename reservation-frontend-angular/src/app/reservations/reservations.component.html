@@ -1,0 +1,77 @@
+<div>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Contexte</th>
+              <th>Date</th>
+              <th>Duree</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let reservation of reservations">
+              <td>{{reservation.nom}}</td>
+              <td>{{reservation.contexte}}</td>
+              <td>{{reservation.date}}</td>
+              <td>{{reservation.duree}}</td>
+
+              <td>
+                <button class="btn btn-dark" (click)="showPersonne(reservation.personne.id)">
+                  <i class="bi bi-person-circle"></i>
+                </button>
+              </td>
+
+              <td>
+                <button class="btn btn-success">
+                  <i class="bi bi-plus-circle"></i>
+                </button>
+              </td>
+
+              <td>
+                <button class="btn btn-info">
+                  <i class="bi bi-archive"></i>
+                </button>
+              </td>
+
+              <td>
+                <button class="btn btn-danger" (click)="deleteById(reservation.id)">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+
+        <!-- Ici pour afficher les personnes qui ont réservé  -->
+        <div class="col-md-6" *ngIf="showTable">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Fonction</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+              <td>{{personne.nom}}</td>
+              <td>{{personne.email}}</td>
+              <td>{{personne.fonction}}</td>
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

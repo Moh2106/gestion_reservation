@@ -1,0 +1,45 @@
+<div>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Type</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let resource of resources">
+              <td>{{resource.nom}}</td>
+              <td>{{resource.type}}</td>
+              <td>
+                <button class="btn btn-success">
+                  <i class="bi bi-plus-circle"></i>
+                </button>
+              </td>
+
+              <td>
+                <button class="btn btn-info">
+                  <i class="bi bi-archive"></i>
+                </button>
+              </td>
+
+              <td>
+                <button class="btn btn-danger" (click)="deleteById(resource.id)">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
